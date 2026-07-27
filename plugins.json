@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-07-27T00:00:00Z",
+  "plugins": [
+    {
+      "slug": "epay",
+      "name": "易支付",
+      "version": "1.0.0",
+      "type": "payment",
+      "description": "集成易支付聚合支付平台，支持支付宝、微信支付、QQ钱包等多种支付方式。自动回调处理、订单同步、退款管理一站式解决方案。",
+      "icon": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/epay/icon.png",
+      "doc_url": "https://github.com/suibian-sun/SunShop-Plugin/blob/main/epay/README.md",
+      "price": 0,
+      "price_type": "free",
+      "trial_days": 0,
+      "target_scope": "all",
+      "member_level": "",
+      "is_forced": false,
+      "is_active": true,
+      "screen_status": "approved",
+      "developer": "SunShop Official",
+      "manifest_url": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/epay/manifest.json",
+      "source_url": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/epay/epay.go"
+    }
+  ]
+}

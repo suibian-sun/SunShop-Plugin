@@ -1,0 +1,81 @@
+{
+  "slug": "epay",
+  "name": "易支付",
+  "version": "1.0.0",
+  "type": "payment",
+  "description": "集成易支付聚合支付平台，支持支付宝、微信支付、QQ钱包等多种支付方式。",
+  "icon": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/epay/icon.png",
+  "doc_url": "https://github.com/suibian-sun/SunShop-Plugin/blob/main/epay/README.md",
+  "price": 0,
+  "price_type": "free",
+  "trial_days": 0,
+  "target_scope": "all",
+  "member_level": "",
+  "is_forced": false,
+  "is_active": true,
+  "screen_status": "approved",
+  "developer": "SunShop Official",
+  "permissions": [
+    "payment:process",
+    "payment:refund",
+    "payment:callback",
+    "order:read"
+  ],
+  "config_schema": {
+    "type": "object",
+    "required": ["api_url", "app_id", "app_secret"],
+    "properties": {
+      "api_url": {
+        "type": "string",
+        "title": "易支付接口地址",
+        "description": "例如：https://pay.example.com",
+        "placeholder": "https://pay.example.com",
+        "format": "uri"
+      },
+      "app_id": {
+        "type": "string",
+        "title": "商户ID",
+        "description": "易支付平台分配的商户ID",
+        "minLength": 4
+      },
+      "app_secret": {
+        "type": "string",
+        "title": "商户密钥",
+        "description": "易支付平台分配的商户密钥",
+        "minLength": 16,
+        "secret": true
+      },
+      "pay_type": {
+        "type": "string",
+        "title": "默认支付方式",
+        "description": "用户在易支付页面可选择的支付方式",
+        "enum": ["alipay", "wxpay", "qqpay", "all"],
+        "enumNames": ["支付宝", "微信支付", "QQ钱包", "全部"],
+        "default": "all"
+      },
+      "notify_url": {
+        "type": "string",
+        "title": "异步通知地址",
+        "description": "留空则使用系统默认回调地址",
+        "format": "uri"
+      },
+      "return_url": {
+        "type": "string",
+        "title": "同步跳转地址",
+        "description": "支付完成后跳转地址",
+        "format": "uri"
+      }
+    }
+  },
+  "hooks": {
+    "on_install": "epay.onInstall",
+    "on_uninstall": "epay.onUninstall",
+    "on_enable": "epay.onEnable",
+    "on_disable": "epay.onDisable"
+  },
+  "events": {
+    "payment:created": "epay.onPaymentCreated",
+    "payment:callback": "epay.onPaymentCallback",
+    "payment:refund": "epay.onPaymentRefund"
+  }
+}
