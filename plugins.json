@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-27T00:00:00Z",
+  "updated_at": "2026-07-29T00:00:00Z",
   "plugins": [
     {
       "slug": "epay",
@@ -21,6 +21,26 @@
       "developer": "SunShop Official",
       "manifest_url": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/epay/manifest.json",
       "source_url": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/epay/epay.go"
+    },
+    {
+      "slug": "wxpusher",
+      "name": "微信通知",
+      "version": "1.0.0",
+      "type": "notification",
+      "description": "基于WxPusher的微信通知渠道，支持向微信用户推送订单通知、工单通知等消息。",
+      "icon": "",
+      "doc_url": "https://github.com/suibian-sun/SunShop-Plugin/blob/main/wxpusher/README.md",
+      "price": 0,
+      "price_type": "free",
+      "trial_days": 0,
+      "target_scope": "all",
+      "member_level": "",
+      "is_forced": false,
+      "is_active": true,
+      "screen_status": "approved",
+      "developer": "SunShop Official",
+      "manifest_url": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/wxpusher/manifest.json",
+      "source_url": "https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/main/wxpusher/wxpusher.go"
     }
   ]
 }

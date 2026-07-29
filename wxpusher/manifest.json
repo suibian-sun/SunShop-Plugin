@@ -1,0 +1,59 @@
+{
+  "slug": "wxpusher",
+  "name": "微信通知",
+  "version": "1.0.0",
+  "type": "notification",
+  "description": "基于WxPusher的微信通知渠道，支持向微信用户推送订单通知、工单通知等消息。",
+  "icon": "",
+  "doc_url": "https://github.com/suibian-sun/SunShop-Plugin/blob/main/wxpusher/README.md",
+  "price": 0,
+  "price_type": "free",
+  "trial_days": 0,
+  "target_scope": "all",
+  "member_level": "",
+  "is_forced": false,
+  "is_active": true,
+  "screen_status": "approved",
+  "developer": "SunShop Official",
+  "permissions": [
+    "notification:send"
+  ],
+  "config_schema": {
+    "type": "object",
+    "required": ["app_token", "uids"],
+    "properties": {
+      "app_token": {
+        "type": "string",
+        "title": "应用令牌(AppToken)",
+        "description": "WxPusher应用令牌，用于API鉴权",
+        "secret": true
+      },
+      "uids": {
+        "type": "array",
+        "title": "用户UID列表",
+        "description": "接收消息的微信用户UID，可在WxPusher后台获取",
+        "items": {
+          "type": "string"
+        }
+      },
+      "topic_ids": {
+        "type": "array",
+        "title": "主题ID列表",
+        "description": "可选，用于群发消息的主题ID",
+        "items": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "hooks": {
+    "on_install": "wxpusher.onInstall",
+    "on_uninstall": "wxpusher.onUninstall",
+    "on_enable": "wxpusher.onEnable",
+    "on_disable": "wxpusher.onDisable"
+  },
+  "events": {
+    "order:paid": "wxpusher.sendOrderPaid",
+    "ticket:created": "wxpusher.sendTicketCreated"
+  }
+}
