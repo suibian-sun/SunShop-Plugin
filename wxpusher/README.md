@@ -401,4 +401,4 @@ func SendMarkdown(cfg WxPusherConfig, markdown, summary string) (*SendResponse, 
 
 - [WxPusher 官方文档](https://wxpusher.zjiecode.com/docs)
 - [WxPusher 关注管理](https://wxpusher.zjiecode.com/wxuser/?type=1&id=133355#/follow)
-- [SunShop 插件系统文档](../server/plugins/API.md)
+- [SunShop 插件系统文档](https://raw.githubusercontent.com/suibian-sun/SunShop-Plugin/refs/heads/main/API.md)
